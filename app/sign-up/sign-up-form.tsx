@@ -17,8 +17,8 @@ const SignUpForm = () => {
 			/>
 			<input
 				type='password'
-				name='confirm-pasword'
-				id='confirm-pasword'
+				name='confirmPassword'
+				id='confirmPassword'
 				placeholder='Repeat password'
 				className='w-full border-b-[1px] border-b-blueSecondary pl-4 pb-4 mb-10'
 			/>
