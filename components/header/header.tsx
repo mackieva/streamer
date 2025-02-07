@@ -13,16 +13,16 @@ const Header = () => {
 		<header className='bg-blueTertiary px-7 py-9 flex flex-col justify-start items-center rounded-[20px] h-full'>
 			<Image src={logo} alt='Streamer Logo' className='mb-[75px]' />
 			<nav className='flex flex-col justify-between items-center gap-10 mb-auto'>
-				<Link href='#'>
+				<Link href='/'>
 					<Image src={home} alt='Grid Blocks Icon' className='icon' />
 				</Link>
-				<Link href='#'>
+				<Link href='/movies'>
 					<Image src={movies} alt='Film Strip Icon' className='icon' />
 				</Link>
-				<Link href='#'>
+				<Link href='/tv'>
 					<Image src={tv} alt='Television Set Icon' className='icon' />
 				</Link>
-				<Link href='#'>
+				<Link href='/bookmarks'>
 					<Image src={bookmarks} alt='Bookmark Ribbon Icon' className='icon' />
 				</Link>
 			</nav>

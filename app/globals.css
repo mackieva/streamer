@@ -68,4 +68,5 @@ input {
 .site-container {
 	display: grid;
 	grid-template-columns: 96px 1fr;
+	gap: 36px;
 }
