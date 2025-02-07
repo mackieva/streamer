@@ -6,5 +6,10 @@ export default async function Home() {
 		redirect('/sign-in');
 	}
 
-	return <main>Home Page</main>;
+	return (
+		<section>
+			<h2 className='heading-l'>Trending</h2>
+			<h2 className='heading-l'>Recommended for you</h2>
+		</section>
+	);
 }

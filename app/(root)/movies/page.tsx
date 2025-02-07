@@ -6,5 +6,9 @@ export default async function MoviesPage() {
 		redirect('/sign-in');
 	}
 
-	return <section>Movies</section>;
+	return (
+		<section>
+			<h2 className='heading-l'>Movies</h2>
+		</section>
+	);
 }

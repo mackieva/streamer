@@ -6,5 +6,10 @@ export default async function BookmarksPage() {
 		redirect('/sign-in');
 	}
 
-	return <section>Bookmarks</section>;
+	return (
+		<section>
+			<h2 className='heading-l'>Bookmarked Movies</h2>
+			<h2 className='heading-l'>Bookmarked TV Series</h2>
+		</section>
+	);
 }
