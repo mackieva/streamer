@@ -6,5 +6,5 @@ export default async function MoviesPage() {
 		redirect('/sign-in');
 	}
 
-	return <main>Movies</main>;
+	return <section>Movies</section>;
 }

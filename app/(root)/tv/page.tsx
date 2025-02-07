@@ -6,5 +6,5 @@ export default async function TelevisionPage() {
 		redirect('/sign-in');
 	}
 
-	return <main>Television</main>;
+	return <section>Television</section>;
 }

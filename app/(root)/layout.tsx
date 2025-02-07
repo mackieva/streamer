@@ -1,4 +1,5 @@
 import Header from '@/components/header/header';
+import SearchBar from '@/components/search/search-bar';
 
 const authLayout = ({
 	children,
@@ -8,7 +9,10 @@ const authLayout = ({
 	return (
 		<div className='site-container p-8 min-h-screen'>
 			<Header />
-			{children}
+			<main>
+				<SearchBar />
+				{children}
+			</main>
 		</div>
 	);
 };

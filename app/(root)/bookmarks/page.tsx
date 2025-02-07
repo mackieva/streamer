@@ -6,5 +6,5 @@ export default async function BookmarksPage() {
 		redirect('/sign-in');
 	}
 
-	return <main>Bookmarks</main>;
+	return <section>Bookmarks</section>;
 }
