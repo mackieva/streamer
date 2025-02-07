@@ -1,6 +1,6 @@
 'use server';
 
-import { signUpSchema } from '../validators';
+import { signUpSchema, signInSchema } from '../validators';
 import { hashSync } from 'bcrypt-ts-edge';
 import { prisma } from '@/db/db';
 import { auth, signIn, signOut } from '@/auth';
@@ -32,6 +32,19 @@ export async function userSignUp(prevState: unknown, formData: FormData) {
 	} catch (e) {
 		console.log(`${e}`);
 	}
+}
+
+export async function userSignIn(prevState: unknown, formData: FormData) {
+	const validatedData = signInSchema.safeParse({
+		email: formData.get('email'),
+		password: formData.get('password'),
+	});
+
+	if (!validatedData.success) {
+		return { errors: validatedData.error.flatten().fieldErrors };
+	}
+
+	await signIn('credentials', validatedData.data);
 }
 
 export async function userSignOut() {
