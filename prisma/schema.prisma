@@ -14,14 +14,15 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String      @id @default(cuid())
   name          String?
-  email         String    @unique
+  email         String      @unique
   emailVerified DateTime?
   password      String
   image         String?
   accounts      Account[]
   sessions      Session[]
+  bookmarks     Bookmarks[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -64,4 +65,23 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+}
+
+model Media {
+  id         String      @id @default(uuid())
+  title      String
+  thumbnail  Json
+  year       Int
+  category   String
+  rating     String
+  isTrending Boolean
+  bookmarks  Bookmarks[]
+}
+
+model Bookmarks {
+  id      String @id @default(uuid())
+  userId  String
+  mediaId String
+  media   Media  @relation(fields: [mediaId], references: [id])
+  user    User   @relation(fields: [userId], references: [id])
 }
