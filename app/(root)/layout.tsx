@@ -9,7 +9,7 @@ const authLayout = ({
 	return (
 		<div className='site-container p-8 min-h-screen'>
 			<Header />
-			<main>
+			<main className='w-full'>
 				<SearchBar />
 				{children}
 			</main>
