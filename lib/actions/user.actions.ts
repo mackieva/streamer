@@ -3,6 +3,7 @@
 import { signUpSchema } from '../validators';
 import { hashSync } from 'bcrypt-ts-edge';
 import { prisma } from '@/db/db';
+import { auth, signIn, signOut } from '@/auth';
 
 export async function userSignUp(prevState: unknown, formData: FormData) {
 	try {
@@ -20,8 +21,6 @@ export async function userSignUp(prevState: unknown, formData: FormData) {
 
 		const cleanpassword = hashSync(password, 10);
 
-		console.log(cleanpassword);
-
 		await prisma.user.create({
 			data: {
 				email,
@@ -29,8 +28,12 @@ export async function userSignUp(prevState: unknown, formData: FormData) {
 			},
 		});
 
-		console.log('user created');
+		await signIn('credentials', { email, password });
 	} catch (e) {
 		console.log(`${e}`);
 	}
+}
+
+export async function userSignOut() {
+	await signOut();
 }
