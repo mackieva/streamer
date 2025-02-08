@@ -13,8 +13,8 @@ export default async function Home() {
 	const sortedMedia = movies.concat(television);
 	return (
 		<section>
-			<h2 className='heading-l mb-8'>Trending</h2>
-			<h2 className='heading-l mb-8'>Recommended for you</h2>
+			<h2 className='mb-8 heading-l'>Trending</h2>
+			<h2 className='mb-8 heading-l'>Recommended for you</h2>
 			<MediaGrid media={sortedMedia} />
 		</section>
 	);

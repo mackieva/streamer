@@ -9,15 +9,16 @@ const MediaGridImage = ({ thumbnails }: { thumbnails: any }) => {
 				width={280}
 				height={174}
 				alt='Thumbnail'
-				className='rounded-lg'
+				className='rounded-lg w-full'
+				objectFit='cover'
 			/>
 			<div className='play'>
-				<button className='play-btn rounded-full heading-xs'>
+				<button className='rounded-full heading-xs play-btn'>
 					<Image src={playIcon} alt='Play Icon' />
 					Play
 				</button>
 			</div>
-			<button className='bookmark-btn rounded-full'>
+			<button className='rounded-full bookmark-btn'>
 				<Image src={bookmarkIcon} alt='Bookmark Icon' width={12} height={14} />
 			</button>
 		</div>
