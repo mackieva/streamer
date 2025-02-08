@@ -11,7 +11,7 @@ export default async function MoviesPage() {
 
 	return (
 		<section>
-			<h2 className='heading-l'>Movies</h2>
+			<h2 className='heading-l mb-8'>Movies</h2>
 			<MediaGrid media={media} />
 		</section>
 	);

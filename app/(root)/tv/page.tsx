@@ -11,7 +11,7 @@ export default async function TelevisionPage() {
 	console.log(media);
 	return (
 		<section>
-			<h2 className='heading-l'>TV Series</h2>
+			<h2 className='heading-l mb-8'>TV Series</h2>
 			<MediaGrid media={media} />
 		</section>
 	);
