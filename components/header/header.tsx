@@ -14,9 +14,9 @@ import './header.css';
 const Header = () => {
 	const path = usePathname();
 	return (
-		<header className='bg-blueTertiary px-7 py-9 flex flex-col justify-start items-center rounded-[20px] h-screen'>
-			<Image src={logo} alt='Streamer Logo' className='mb-[75px]' />
-			<nav className='flex flex-col justify-between items-center gap-10 mb-auto'>
+		<header className='bg-blueTertiary flex justify-between items-center p-6 rounded-[20px] mt-8 mx-8 lg:m-0 lg:flex-col lg:justify-start lg:px-7 lg:py-9 lg:h-[92vh]'>
+			<Image src={logo} alt='Streamer Logo' className='lg:mb-[75px]' />
+			<nav className='flex justify-between items-center gap-10 lg:mb-auto lg:flex-col'>
 				<Link href='/'>
 					<Image
 						src={home}
@@ -49,7 +49,7 @@ const Header = () => {
 			<Image
 				src={avatar}
 				alt='User Headshot'
-				className='border-[1px] border-white rounded-full'
+				className='border-[1px] border-white rounded-full w-8 h-8'
 			/>
 		</header>
 	);
