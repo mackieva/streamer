@@ -3,12 +3,13 @@ import tv from '@/public/images/icon-category-tv.svg';
 import movie from '@/public/images/icon-category-movie.svg';
 import Image from 'next/image';
 import MediaGridImage from './media-grid-image';
+import './media-grid.css';
 
 const MediaGrid = ({ media }: { media: Media[] }) => {
 	return (
 		<div className='grid grid-cols-4 gap-10'>
 			{media.map((item) => (
-				<div key={item.id}>
+				<div key={item.id} className='media-item'>
 					<MediaGridImage thumbnails={item.thumbnail} />
 					<div className='flex justify-start items-center gap-2 mt-2'>
 						<span className='body-sm opacity-75'>{item.year}</span> &middot;{' '}
