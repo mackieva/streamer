@@ -9,3 +9,29 @@ export async function getAllMedia() {
 	});
 	return media;
 }
+
+export async function getTelevisionMedia() {
+	const media = await prisma.media.findMany({
+		orderBy: {
+			year: 'desc',
+		},
+		where: {
+			category: 'TV Series',
+		},
+	});
+
+	return media;
+}
+
+export async function getMoviesMedia() {
+	const media = await prisma.media.findMany({
+		orderBy: {
+			year: 'desc',
+		},
+		where: {
+			category: 'TV Series',
+		},
+	});
+
+	return media;
+}
