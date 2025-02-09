@@ -14,9 +14,9 @@ import './header.css';
 const Header = () => {
 	const path = usePathname();
 	return (
-		<header className='flex lg:flex-col justify-between lg:justify-start items-center bg-blueTertiary lg:m-0 mx-8 mt-8 lg:px-7 lg:py-9 p-6 rounded-[20px] lg:h-[92vh]'>
+		<header className='flex lg:flex-col justify-between lg:justify-start items-center bg-blueTertiary lg:m-0 md:mx-8 md:mt-8 mb-8 lg:px-7 lg:py-9 p-4 md:p-6 rounded-[10px] md:rounded-[20px] lg:h-[92vh]'>
 			<Image src={logo} alt='Streamer Logo' className='lg:mb-[75px]' />
-			<nav className='flex lg:flex-col justify-between items-center gap-10 lg:mb-auto'>
+			<nav className='flex lg:flex-col justify-between items-center gap-8 lg:gap-10 lg:mb-auto'>
 				<Link href='/'>
 					<Image
 						src={home}
