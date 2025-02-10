@@ -13,9 +13,9 @@ export default async function BookmarksPage() {
 
 	return (
 		<section>
-			<h2 className='heading-l'>Bookmarked Movies</h2>
+			<h2 className='mb-8 heading-l'>Bookmarked Movies</h2>
 			<MediaGrid media={movies} />
-			<h2 className='heading-l'>Bookmarked TV Series</h2>
+			<h2 className='mt-8 mb-8 heading-l'>Bookmarked TV Series</h2>
 			<MediaGrid media={television} />
 		</section>
 	);
