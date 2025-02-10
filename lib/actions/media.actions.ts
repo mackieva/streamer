@@ -83,3 +83,30 @@ export async function removeBookmark(mediaId: string, prevState: unknown) {
 		message: 'Bookmark updated',
 	};
 }
+
+export async function getBookmarkedMedia() {
+	const session = await auth();
+	const userId = session?.user?.id as string;
+	console.log(userId);
+
+	// const bookmarked = await prisma.media.findMany({
+	// 	where: {
+	// 		bookmarks: {
+	// 			some: {},
+	// 		},
+	// 	},
+	// 	include: {
+	// 		bookmarks: true,
+	// 	},
+	// });
+
+	const bookmarked = await prisma.media.findMany({
+		where: {
+			bookmarks: {
+				some: { userId: userId },
+			},
+		},
+	});
+
+	return bookmarked;
+}
