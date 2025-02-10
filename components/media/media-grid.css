@@ -3,6 +3,10 @@
 	overflow: hidden;
 }
 
+.media-item__imageContainer--trending {
+	margin-right: 40px;
+}
+
 .media-item__imageContainer .play {
 	position: absolute;
 	width: 100%;

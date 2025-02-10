@@ -7,7 +7,7 @@ const authLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<div className='flex flex-col lg:gap-9 lg:grid lg:grid-cols-[96px_1fr] lg:p-8 lg:min-h-screen'>
+		<div className='flex flex-col lg:gap-9 lg:grid lg:grid-cols-[96px_92%] lg:p-8 lg:min-h-screen overflow-visible'>
 			<Header />
 			<main className='mx-4 md:mx-8 lg:mx-0'>
 				<SearchBar />

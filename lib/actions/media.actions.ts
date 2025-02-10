@@ -29,7 +29,7 @@ export async function getMoviesMedia() {
 			year: 'desc',
 		},
 		where: {
-			category: 'TV Series',
+			category: 'Movie',
 		},
 	});
 
