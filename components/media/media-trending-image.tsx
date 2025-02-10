@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import playIcon from '@/public/images/icon-play.svg';
-import bookmarkIcon from '@/public/images/icon-bookmark-empty.svg';
-const MediaTrendingImage = ({ image }: { image: any }) => {
+import MediaBookmark from './media-bookmark';
+const MediaTrendingImage = async ({
+	image,
+	id,
+}: {
+	image: any;
+	id: string;
+}) => {
 	return (
 		<div className='media-item__imageContainer media-item__imageContainer--trending'>
 			<Image
@@ -9,8 +15,7 @@ const MediaTrendingImage = ({ image }: { image: any }) => {
 				width={470}
 				height={230}
 				alt='Thumbnail'
-				className='rounded-lg w-full'
-				objectFit='cover'
+				className='rounded-lg w-full object-fill'
 			/>
 			<div className='play'>
 				<button className='rounded-full heading-xs play-btn'>
@@ -18,9 +23,7 @@ const MediaTrendingImage = ({ image }: { image: any }) => {
 					Play
 				</button>
 			</div>
-			<button className='rounded-full bookmark-btn'>
-				<Image src={bookmarkIcon} alt='Bookmark Icon' width={12} height={14} />
-			</button>
+			<MediaBookmark id={id} />
 		</div>
 	);
 };

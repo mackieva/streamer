@@ -1,4 +1,8 @@
-import { signInSchema, signUpSchema } from '@/lib/validators';
+import {
+	signInSchema,
+	signUpSchema,
+	createBookmarkSchema,
+} from '@/lib/validators';
 import { JsonValue } from 'next-auth/adapters';
 import { z } from 'zod';
 
@@ -23,3 +27,5 @@ export type Media = {
 	rating: string;
 	thumbnail: JsonValue;
 };
+
+export type CreateBookmark = z.infer<typeof createBookmarkSchema>;

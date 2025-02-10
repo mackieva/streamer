@@ -15,3 +15,8 @@ export const signUpSchema = z
 		message: 'Passwords must match',
 		path: ['confirmPassword'],
 	});
+
+export const createBookmarkSchema = z.object({
+	userId: z.string(),
+	mediaId: z.string(),
+});

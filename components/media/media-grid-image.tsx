@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import playIcon from '@/public/images/icon-play.svg';
-import bookmarkIcon from '@/public/images/icon-bookmark-empty.svg';
-const MediaGridImage = ({ thumbnails }: { thumbnails: any }) => {
+import MediaBookmark from './media-bookmark';
+const MediaGridImage = async ({
+	thumbnails,
+	id,
+}: {
+	thumbnails: any;
+	id: string;
+}) => {
 	return (
 		<div className='media-item__imageContainer'>
 			<Image
@@ -9,8 +15,7 @@ const MediaGridImage = ({ thumbnails }: { thumbnails: any }) => {
 				width={280}
 				height={174}
 				alt='Thumbnail'
-				className='rounded-lg w-full'
-				objectFit='cover'
+				className='rounded-lg w-full object-fill'
 			/>
 			<div className='play'>
 				<button className='rounded-full heading-xs play-btn'>
@@ -18,9 +23,7 @@ const MediaGridImage = ({ thumbnails }: { thumbnails: any }) => {
 					Play
 				</button>
 			</div>
-			<button className='rounded-full bookmark-btn'>
-				<Image src={bookmarkIcon} alt='Bookmark Icon' width={12} height={14} />
-			</button>
+			<MediaBookmark id={id} />
 		</div>
 	);
 };

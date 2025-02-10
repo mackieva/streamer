@@ -81,7 +81,7 @@ model Media {
 model Bookmarks {
   id      String @id @default(uuid())
   userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   mediaId String
-  media   Media  @relation(fields: [mediaId], references: [id])
-  user    User   @relation(fields: [userId], references: [id])
+  media   Media  @relation(fields: [mediaId], references: [id], onDelete: Cascade)
 }
