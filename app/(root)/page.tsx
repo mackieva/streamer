@@ -2,7 +2,14 @@ import { getAllMedia } from '@/lib/actions/media.actions';
 import MediaGrid from '@/components/media/media-grid';
 import MediaTrending from '@/components/media/media-trending';
 import SignOutButton from '@/components/test/signoutbtn';
+import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
 export default async function Home() {
+	const session = await auth();
+	if (!session) {
+		redirect('/sign-in');
+	}
+	console.log(session);
 	const media = await getAllMedia();
 	const trending = media.filter((item) => item.isTrending === true);
 	const movies = media.filter((item) => item.category === 'Movie');
