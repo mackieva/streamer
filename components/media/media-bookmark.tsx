@@ -2,8 +2,9 @@
 import bookmarkIcon from '@/public/images/icon-bookmark-empty.svg';
 import bookmarkIconActive from '@/public/images/icon-bookmark-full.svg';
 import Image from 'next/image';
-import { createBookmark } from '@/lib/actions/media.actions';
-import { useActionState, useEffect, useState } from 'react';
+import { createBookmark, removeBookmark } from '@/lib/actions/media.actions';
+import { useActionState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Bookmarks {
 	id: string;
@@ -18,9 +19,6 @@ const MediaBookmark = ({
 	id: string;
 	bookmarks: Bookmarks[] | undefined;
 }) => {
-	const [state, formAction] = useActionState(createBookmark.bind(null, id), {
-		message: '',
-	});
 	const [status, setStatus] = useState(false);
 	useEffect(() => {
 		if (bookmarks?.find((b) => b.mediaId === id)) {
@@ -28,9 +26,21 @@ const MediaBookmark = ({
 		} else {
 			setStatus(false);
 		}
-	}, [state]);
+	}, [bookmarks, status]);
+	const [addstate, formActionAdd] = useActionState(
+		createBookmark.bind(null, id),
+		{
+			message: '',
+		}
+	);
+	const [removestate, formActionRemove] = useActionState(
+		removeBookmark.bind(null, id),
+		{
+			message: '',
+		}
+	);
 	return (
-		<form action={formAction}>
+		<form action={status ? formActionRemove : formActionAdd}>
 			<button className='rounded-full bookmark-btn' type='submit'>
 				<Image
 					src={status ? bookmarkIconActive : bookmarkIcon}

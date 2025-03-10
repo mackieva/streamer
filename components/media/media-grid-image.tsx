@@ -2,6 +2,7 @@ import Image from 'next/image';
 import playIcon from '@/public/images/icon-play.svg';
 import MediaBookmark from './media-bookmark';
 import { getUserBookmarks } from '@/lib/actions/media.actions';
+import { Suspense } from 'react';
 
 const MediaGridImage = async ({
 	thumbnails,
@@ -26,7 +27,9 @@ const MediaGridImage = async ({
 					Play
 				</button>
 			</div>
-			<MediaBookmark id={id} bookmarks={bookmarks} />
+			<Suspense fallback={<div>Loading</div>}>
+				<MediaBookmark id={id} bookmarks={bookmarks} />
+			</Suspense>
 		</div>
 	);
 };

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import MediaGridImage from './media-grid-image';
 import './media-grid.css';
 
-const MediaGrid = ({ media }: { media: Media[] }) => {
+const MediaGrid = async ({ media }: { media: Media[] }) => {
 	return (
 		<div className='gap-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
 			{media.map((item) => (

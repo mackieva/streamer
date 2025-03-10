@@ -1,9 +1,7 @@
 'use server';
-import { createBookmarkSchema } from '../validators';
 import { prisma } from '@/db/db';
 import { auth } from '@/auth';
-import { cacheTag } from 'next/dist/server/use-cache/cache-tag';
-import { revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 
 export async function getAllMedia() {
 	const media = await prisma.media.findMany({
@@ -46,8 +44,6 @@ export async function getUserBookmarks() {
 
 	if (!userId) throw new Error('User not found');
 
-	cacheTag('my-bookmarks');
-
 	const bookmarks = await prisma.user.findFirst({
 		where: {
 			id: userId,
@@ -56,7 +52,6 @@ export async function getUserBookmarks() {
 			bookmarks: true,
 		},
 	});
-
 	if (!bookmarks) return;
 
 	return bookmarks?.bookmarks;
@@ -75,11 +70,9 @@ export async function createBookmark(mediaId: string, prevState: unknown) {
 			},
 		});
 	} catch (e) {
-		console.log({ message: `${e}` });
+		console.log({ message: `Error: ${e}` });
 		return { message: `${e}` };
 	}
-
-	revalidateTag('my-bookmarks');
 
 	return {
 		message: 'Bookmark updated',
@@ -114,7 +107,6 @@ export async function removeBookmark(mediaId: string, prevState: unknown) {
 export async function getBookmarkedMedia() {
 	const session = await auth();
 	const userId = session?.user?.id as string;
-	console.log(userId);
 
 	// const bookmarked = await prisma.media.findMany({
 	// 	where: {
