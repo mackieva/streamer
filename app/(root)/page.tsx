@@ -9,7 +9,6 @@ export default async function Home() {
 	if (!session) {
 		redirect('/sign-in');
 	}
-	console.log(session);
 	const media = await getAllMedia();
 	const trending = media.filter((item) => item.isTrending === true);
 	const movies = media.filter((item) => item.category === 'Movie');

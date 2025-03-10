@@ -8,7 +8,6 @@ export default async function TelevisionPage() {
 		redirect('/sign-in');
 	}
 	const media = await getTelevisionMedia();
-	console.log(media);
 	return (
 		<section>
 			<h2 className='heading-l mb-8'>TV Series</h2>

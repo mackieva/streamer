@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import playIcon from '@/public/images/icon-play.svg';
 import MediaBookmark from './media-bookmark';
+import { getUserBookmarks } from '@/lib/actions/media.actions';
 const MediaGridImage = async ({
 	thumbnails,
 	id,
@@ -8,6 +9,7 @@ const MediaGridImage = async ({
 	thumbnails: any;
 	id: string;
 }) => {
+	const bookmarks = await getUserBookmarks();
 	return (
 		<div className='media-item__imageContainer'>
 			<Image
@@ -23,7 +25,7 @@ const MediaGridImage = async ({
 					Play
 				</button>
 			</div>
-			<MediaBookmark id={id} />
+			<MediaBookmark id={id} bookmarks={bookmarks} />
 		</div>
 	);
 };

@@ -38,6 +38,26 @@ export async function getMoviesMedia() {
 	return media;
 }
 
+export async function getUserBookmarks() {
+	const session = await auth();
+	const userId = session?.user?.id as string;
+
+	if (!userId) throw new Error('User not found');
+
+	const bookmarks = await prisma.user.findFirst({
+		where: {
+			id: userId,
+		},
+		select: {
+			bookmarks: true,
+		},
+	});
+
+	if (!bookmarks) return;
+
+	return bookmarks?.bookmarks;
+}
+
 export async function createBookmark(mediaId: string, prevState: unknown) {
 	const session = await auth();
 	const userId = session?.user?.id as string;
@@ -57,6 +77,7 @@ export async function createBookmark(mediaId: string, prevState: unknown) {
 
 	return {
 		message: 'Bookmark updated',
+		bookmarked: true,
 	};
 }
 
