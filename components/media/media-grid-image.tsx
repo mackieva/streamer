@@ -2,6 +2,7 @@ import Image from 'next/image';
 import playIcon from '@/public/images/icon-play.svg';
 import MediaBookmark from './media-bookmark';
 import { getUserBookmarks } from '@/lib/actions/media.actions';
+
 const MediaGridImage = async ({
 	thumbnails,
 	id,
