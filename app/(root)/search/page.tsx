@@ -8,7 +8,11 @@ const SearchPage = async (props: {
 	const media = await getSearchedMedia(query);
 	return (
 		<section>
-			<h2 className='mb-8 heading-l'>Search Results</h2>
+			<h2 className='mb-8 heading-l'>
+				Found {media.length}{' '}
+				{media.length > 1 || media.length === 0 ? 'results' : 'result'} for
+				&lsquo;{query}&rsquo;
+			</h2>
 			{/* <p>{query}</p> */}
 			<MediaGrid media={media} />
 		</section>
