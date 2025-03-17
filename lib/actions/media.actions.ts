@@ -1,6 +1,7 @@
 'use server';
 import { prisma } from '@/db/db';
 import { auth } from '@/auth';
+import { revalidatePath } from 'next/cache';
 
 export async function getAllMedia() {
 	const media = await prisma.media.findMany({
@@ -98,6 +99,8 @@ export async function updateBookmarkAction(
 		});
 	}
 
+	revalidatePath('/bookmarks');
+
 	return {
 		message: 'Bookmark updated',
 		status: true,
@@ -175,4 +178,18 @@ export async function getBookmarkedMedia() {
 	});
 
 	return bookmarked;
+}
+
+export async function getSearchedMedia(query: string) {
+	console.log(query);
+	const media = await prisma.media.findMany({
+		where: {
+			title: {
+				contains: query,
+				mode: 'insensitive',
+			},
+		},
+	});
+
+	return media;
 }

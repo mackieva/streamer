@@ -19,7 +19,21 @@ const MediaGridImage = async ({
 				width={280}
 				height={174}
 				alt='Thumbnail'
-				className='rounded-lg w-full object-fill'
+				className='rounded-lg w-full object-fill hidden lg:block'
+			/>
+			<Image
+				src={thumbnails.regular.medium}
+				width={280}
+				height={174}
+				alt='Thumbnail'
+				className='rounded-lg w-full object-fill hidden md:block lg:hidden'
+			/>
+			<Image
+				src={thumbnails.regular.small}
+				width={280}
+				height={174}
+				alt='Thumbnail'
+				className='rounded-lg w-full object-fill block md:hidden'
 			/>
 			<div className='play'>
 				<button className='rounded-full heading-xs play-btn'>
