@@ -3,25 +3,29 @@ import playIcon from '@/public/images/icon-play.svg';
 import MediaBookmark from './media-bookmark';
 import { getUserBookmarks } from '@/lib/actions/media.actions';
 import { Suspense } from 'react';
+type CarouselImage = {
+	large: string;
+	small: string;
+};
 const MediaTrendingImage = async ({
 	image,
 	id,
 }: {
-	image: any;
+	image: CarouselImage;
 	id: string;
 }) => {
 	const bookmarks = await getUserBookmarks();
 	return (
 		<div className='media-item__imageContainer media-item__imageContainer--trending'>
 			<Image
-				src={image.trending.large}
+				src={image.large}
 				width={470}
 				height={230}
 				alt='Thumbnail'
 				className='rounded-lg w-full object-fill hidden md:block'
 			/>
 			<Image
-				src={image.trending.small}
+				src={image.small}
 				width={470}
 				height={230}
 				alt='Thumbnail'

@@ -3,7 +3,7 @@
 import { signUpSchema, signInSchema } from '../validators';
 import { hashSync } from 'bcrypt-ts-edge';
 import { prisma } from '@/db/db';
-import { auth, signIn, signOut } from '@/auth';
+import { signIn, signOut } from '@/auth';
 
 export async function userSignUp(prevState: unknown, formData: FormData) {
 	try {

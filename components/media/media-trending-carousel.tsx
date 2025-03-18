@@ -1,8 +1,9 @@
 'use client';
 
 import AliceCarousel from 'react-alice-carousel';
+import { ReactElement } from 'react';
 
-const MediaTrendingCarousel = ({ items }: { items: any }) => {
+const MediaTrendingCarousel = ({ items }: { items: ReactElement[] }) => {
 	const responsive = {
 		0: { items: 2 },
 		768: { items: 3 },

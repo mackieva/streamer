@@ -3,7 +3,6 @@ import {
 	signUpSchema,
 	createBookmarkSchema,
 } from '@/lib/validators';
-import { JsonValue } from 'next-auth/adapters';
 import { z } from 'zod';
 
 export type initialSignupState = {
@@ -25,7 +24,19 @@ export type Media = {
 	year: number;
 	category: string;
 	rating: string;
-	thumbnail: JsonValue;
+	thumbnail: MediaImage;
+};
+
+type MediaImage = {
+	trending: {
+		small: string;
+		large: string;
+	};
+	regular: {
+		small: string;
+		medium: string;
+		large: string;
+	};
 };
 
 export type CreateBookmark = z.infer<typeof createBookmarkSchema>;

@@ -4,11 +4,23 @@ import MediaBookmark from './media-bookmark';
 import { getUserBookmarks } from '@/lib/actions/media.actions';
 import { Suspense } from 'react';
 
+type Thumbnails = {
+	trending?: {
+		large: string;
+		small: string;
+	};
+	regular: {
+		large: string;
+		medium: string;
+		small: string;
+	};
+};
+
 const MediaGridImage = async ({
 	thumbnails,
 	id,
 }: {
-	thumbnails: any;
+	thumbnails: Thumbnails;
 	id: string;
 }) => {
 	const bookmarks = await getUserBookmarks();

@@ -56,10 +56,7 @@ export async function getUserBookmarks() {
 	return bookmarks?.bookmarks;
 }
 
-export async function updateBookmarkAction(
-	mediaId: string,
-	prevState: unknown
-) {
+export async function updateBookmarkAction(mediaId: string) {
 	const session = await auth();
 	const userId = session?.user?.id as string;
 
@@ -82,7 +79,6 @@ export async function updateBookmarkAction(
 			});
 		} catch (e) {
 			console.log({ message: `Error: ${e}` });
-			return { message: `${e}`, status: false };
 		}
 	} else {
 		const bookmark = await prisma.bookmarks.findFirst({
@@ -100,33 +96,20 @@ export async function updateBookmarkAction(
 	}
 
 	revalidatePath('/bookmarks');
-
-	return {
-		message: 'Bookmark updated',
-		status: true,
-	};
 }
 
 export async function getBookmarkedMedia() {
 	const session = await auth();
 	const userId = session?.user?.id as string;
 
-	// const bookmarked = await prisma.media.findMany({
-	// 	where: {
-	// 		bookmarks: {
-	// 			some: {},
-	// 		},
-	// 	},
-	// 	include: {
-	// 		bookmarks: true,
-	// 	},
-	// });
-
 	const bookmarked = await prisma.media.findMany({
 		where: {
 			bookmarks: {
 				some: { userId: userId },
 			},
+		},
+		omit: {
+			isTrending: true,
 		},
 	});
 
