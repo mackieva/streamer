@@ -20,7 +20,7 @@ const Search = () => {
 		<form className='w-full' onSubmit={handleSubmit}>
 			<input
 				type='text'
-				placeholder='Search for movies pr TV series'
+				placeholder='Search for movies or TV series'
 				className='text-base md:text-2xl w-full py-4 ml-6 outline-none border-b-[1px] border-transparent active:border-blueSecondary focus: focus:border-blueSecondary caret-red'
 				onChange={(e) => setQuery(e.target.value)}
 			/>
