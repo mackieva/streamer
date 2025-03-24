@@ -4,6 +4,8 @@ import MediaTrending from '@/components/media/media-trending';
 import SignOutButton from '@/components/test/signoutbtn';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
+import GridBlockSkeleton from '@/components/skeleton/grid-block';
 export default async function Home() {
 	const session = await auth();
 	if (!session) {
@@ -20,7 +22,9 @@ export default async function Home() {
 			<h2 className='mb-8 heading-l'>Trending</h2>
 			<MediaTrending media={trending} />
 			<h2 className='mt-8 mb-8 heading-l'>Recommended for you</h2>
-			<MediaGrid media={sortedMedia} />
+			<Suspense fallback={<GridBlockSkeleton />}>
+				<MediaGrid media={sortedMedia} />
+			</Suspense>
 		</section>
 	);
 }

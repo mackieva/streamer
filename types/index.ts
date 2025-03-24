@@ -24,19 +24,9 @@ export type Media = {
 	year: number;
 	category: string;
 	rating: string;
-	thumbnail: MediaImage;
+	thumbnail: JsonObject;
 };
 
-type MediaImage = {
-	trending: {
-		small: string;
-		large: string;
-	};
-	regular: {
-		small: string;
-		medium: string;
-		large: string;
-	};
-};
+export type JsonObject = { [key: string]: any };
 
 export type CreateBookmark = z.infer<typeof createBookmarkSchema>;

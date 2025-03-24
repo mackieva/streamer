@@ -1,11 +1,11 @@
-import { Media } from '@/types';
 import tv from '@/public/images/icon-category-tv.svg';
 import movie from '@/public/images/icon-category-movie.svg';
 import Image from 'next/image';
 import MediaGridImage from './media-grid-image';
+import { JsonObject } from '@/types';
 import './media-grid.css';
 
-const MediaGrid = async ({ media }: { media: Media[] }) => {
+const MediaGrid = async ({ media }: { media: JsonObject[] }) => {
 	return (
 		<div className='gap-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
 			{media.map((item) => (

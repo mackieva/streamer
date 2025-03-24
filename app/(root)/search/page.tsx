@@ -1,5 +1,7 @@
 import { getSearchedMedia } from '@/lib/actions/media.actions';
 import MediaGrid from '@/components/media/media-grid';
+import { Suspense } from 'react';
+import GridBlockSkeleton from '@/components/skeleton/grid-block';
 
 const SearchPage = async (props: {
 	searchParams: Promise<{ query: string }>;
@@ -13,8 +15,9 @@ const SearchPage = async (props: {
 				{media.length > 1 || media.length === 0 ? 'results' : 'result'} for
 				&lsquo;{query}&rsquo;
 			</h2>
-			{/* <p>{query}</p> */}
-			<MediaGrid media={media} />
+			<Suspense fallback={<GridBlockSkeleton />}>
+				<MediaGrid media={media} />
+			</Suspense>
 		</section>
 	);
 };

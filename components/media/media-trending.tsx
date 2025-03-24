@@ -1,9 +1,9 @@
-import { Media } from '@/types';
+import { JsonObject } from '@/types';
 import './media-trending.css';
 import MediaTrendingCarousel from './media-trending-carousel';
 import MediaTrendingImage from './media-trending-image';
 
-const MediaTrending = ({ media }: { media: Media[] }) => {
+const MediaTrending = ({ media }: { media: JsonObject[] }) => {
 	const items = media.map((item) => (
 		<MediaTrendingImage
 			key={item.id}
