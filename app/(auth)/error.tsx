@@ -1,12 +1,6 @@
 'use client';
 
-const ErrorPage = ({
-	error,
-	reset,
-}: {
-	error: Error & { digest?: string };
-	reset: () => void;
-}) => {
+const ErrorPage = ({ reset }: { reset: () => void }) => {
 	return (
 		<main className='flex flex-col justify-center items-center'>
 			<p className='mb-6'>There was an issue signing in.</p>
