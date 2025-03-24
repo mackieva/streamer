@@ -21,7 +21,7 @@ const Search = () => {
 			<input
 				type='text'
 				placeholder='Search for movies'
-				className='heading-m w-full py-4 ml-6'
+				className='heading-m w-full py-4 ml-6 outline-none border-b-[1px] border-transparent active:border-blueSecondary focus: focus:border-blueSecondary caret-red'
 				onChange={(e) => setQuery(e.target.value)}
 			/>
 		</form>
