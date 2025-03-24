@@ -1,7 +1,6 @@
 import { getAllMedia } from '@/lib/actions/media.actions';
 import MediaGrid from '@/components/media/media-grid';
 import MediaTrending from '@/components/media/media-trending';
-import SignOutButton from '@/components/test/signoutbtn';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
 import { Suspense } from 'react';
