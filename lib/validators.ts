@@ -1,18 +1,15 @@
 import { z } from 'zod';
 
 export const signInSchema = z.object({
-	email: z.string().min(1, "Can't be empty").email('Invalid email address'),
-	password: z.string().min(6, 'Password be at least 6 characters'),
+	email: z.string().min(1, "Can't be empty"),
+	password: z.string().min(1, "Can't be empty"),
 });
 
 export const signUpSchema = z
 	.object({
-		email: z
-			.string()
-			.min(1, 'Can&quot;t be empty')
-			.email('Invalid email address'),
-		password: z.string().min(6, 'Password be at least 6 characters'),
-		confirmPassword: z.string().min(6, 'Password be at least 6 characters'),
+		email: z.string().min(1, "Can't be empty"),
+		password: z.string().min(1, "Can't be empty"),
+		confirmPassword: z.string().min(1, "Can't be empty"),
 	})
 	.refine((data) => data.password === data.confirmPassword, {
 		message: 'Passwords must match',
