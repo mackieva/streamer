@@ -20,7 +20,6 @@ export default async function Home() {
 	const sortedMedia = movies.concat(television);
 	return (
 		<section>
-			<SignOutButton />
 			<h2 className='mb-8 heading-l'>Trending</h2>
 			<Suspense fallback={<GridBlockTrendingSkeleton />}>
 				<MediaTrending media={trending} />

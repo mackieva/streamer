@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const SearchBar = () => {
 	return (
-		<div className='flex justify-start items-center mr-4 mb-8'>
+		<div className='flex justify-start items-center mr-4 mb-6 md:mb-8'>
 			<Image src={searchIcon} alt='Magnifying Glass Icon' />
 			<Search />
 		</div>
