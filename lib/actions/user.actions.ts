@@ -4,6 +4,7 @@ import { signUpSchema, signInSchema } from '../validators';
 import { hashSync } from 'bcrypt-ts-edge';
 import { prisma } from '@/db/db';
 import { signIn, signOut } from '@/auth';
+import { redirect } from 'next/navigation';
 
 export async function userSignUp(prevState: unknown, formData: FormData) {
 	try {
@@ -32,6 +33,8 @@ export async function userSignUp(prevState: unknown, formData: FormData) {
 	} catch (e) {
 		console.log(`${e}`);
 	}
+
+	redirect('/');
 }
 
 export async function userSignIn(prevState: unknown, formData: FormData) {
