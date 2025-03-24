@@ -7,21 +7,22 @@ import { signIn, signOut } from '@/auth';
 import { redirect } from 'next/navigation';
 
 export async function userSignUp(prevState: unknown, formData: FormData) {
+	const data = Object.fromEntries(formData);
+
+	const validatedData = signUpSchema.safeParse(data);
+
+	if (!validatedData.success) {
+		return {
+			errors: validatedData.error.flatten().fieldErrors,
+			email: formData.get('email') as string,
+		};
+	}
+
+	const { email, password } = validatedData.data;
+
+	const cleanpassword = hashSync(password, 10);
+
 	try {
-		const validatedData = signUpSchema.safeParse({
-			email: formData.get('email'),
-			password: formData.get('password'),
-			confirmPassword: formData.get('confirmPassword'),
-		});
-
-		if (!validatedData.success) {
-			return { errors: validatedData.error.flatten().fieldErrors };
-		}
-
-		const { email, password } = validatedData.data;
-
-		const cleanpassword = hashSync(password, 10);
-
 		await prisma.user.create({
 			data: {
 				email,

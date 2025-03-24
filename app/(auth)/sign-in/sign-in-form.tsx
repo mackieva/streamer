@@ -17,7 +17,9 @@ const SignInForm = () => {
 				placeholder='Email Address'
 				id='email'
 				name='email'
-				className='w-full border-b-[1px] border-b-blueSecondary pl-4 pb-4 mb-6 outline-none focus:border-b-white'
+				className={`w-full border-b-[1px] pl-4 pb-4 mb-6 outline-none caret-red focus:border-b-white ${
+					state?.errors?.email ? 'border-b-red' : 'border-b-blueSecondary'
+				}`}
 			/>
 			{state?.errors?.email &&
 				state.errors.email.map((e) => <p key={e}>{e}</p>)}
@@ -26,7 +28,9 @@ const SignInForm = () => {
 				name='password'
 				id='password'
 				placeholder='Password'
-				className='w-full border-b-[1px] border-b-blueSecondary pl-4 pb-4 mb-10 outline-none focus:border-b-white'
+				className={`w-full border-b-[1px] pl-4 pb-4 mb-6 outline-none caret-red focus:border-b-white ${
+					state?.errors?.password ? 'border-b-red' : 'border-b-blueSecondary'
+				}`}
 			/>
 			{state?.errors?.password &&
 				state.errors.password.map((e) => <p key={e}>{e}</p>)}

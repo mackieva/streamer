@@ -19,7 +19,7 @@ const SignInPage = async () => {
 			<h2 className='heading-l mb-10'>Login</h2>
 			<SignInForm />
 			<p className='text-center'>
-				Don&apos;t have an account?
+				Don&apos;t have an account?{' '}
 				<Link href='/sign-up' className='text-red'>
 					Sign Up
 				</Link>
