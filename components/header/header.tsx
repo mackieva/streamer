@@ -46,11 +46,13 @@ const Header = () => {
 					/>
 				</Link>
 			</nav>
-			<Image
-				src={avatar}
-				alt='User Headshot'
-				className='border-[1px] border-white rounded-full w-8 h-8'
-			/>
+			<Link href='/profile'>
+				<Image
+					src={avatar}
+					alt='User Headshot'
+					className='border-[1px] border-white rounded-full w-8 h-8'
+				/>
+			</Link>
 		</header>
 	);
 };

@@ -7,6 +7,7 @@ import { compareSync } from 'bcrypt-ts-edge';
 export const { handlers, signIn, signOut, auth } = NextAuth({
 	pages: {
 		signIn: '/sign-in',
+		signOut: '/sign-in',
 		error: '/sign-in',
 	},
 	session: {

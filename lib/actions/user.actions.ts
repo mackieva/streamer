@@ -52,4 +52,6 @@ export async function userSignIn(prevState: unknown, formData: FormData) {
 
 export async function userSignOut() {
 	await signOut();
+
+	redirect('/sign-in');
 }
