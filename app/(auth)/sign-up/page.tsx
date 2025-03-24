@@ -18,8 +18,8 @@ const SignUpPage = async () => {
 			<h2 className='heading-l mb-10'>Sign Up</h2>
 			<SignUpForm />
 			<p className='text-center'>
-				Already have an account?{' '}
-				<Link href='/sign-in' className='text-red'>
+				Already have an account?
+				<Link href='/sign-in' className='text-red ml-[9px]'>
 					Login
 				</Link>
 			</p>
