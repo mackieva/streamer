@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Mentor - Entertainment web app solution
 
-## Getting Started
+This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The challenge
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Users should be able to:
 
-## Learn More
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
+- Add/Remove bookmarks from all movies and TV series
+- Search for relevant shows on all pages
+- **Bonus**: Build this project as a full-stack application
+- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
 
-To learn more about Next.js, take a look at the following resources:
+### Screenshot
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![](./screenshot.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Links
 
-## Deploy on Vercel
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [https://streamer-flame.vercel.app/sign-in](https://streamer-flame.vercel.app/sign-in)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## My process
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Built with
+
+- [Next.js](https://nextjs.org/) - Next.js
+- [Tailwind](https://tailwindcss.com/) - Tailwind
+- [Auth.js](https://authjs.dev/) - Auth.js
+- [Prisma](https://www.prisma.io/) - Prisma
+- [Typescript](https://www.typescriptlang.org/) - Typescript
+- [Zod](https://zod.dev/) - Zod
+
+### What I learned
+
+Setting up a credential email/password login for authentication and authorization using Auth.js
+
+Concepts for handling db work with a boomkarking system for a user account and how to check for and display the users bookmarks.
+
+### Continued development
+
+I'm looking forward to see how others handled the bookmarking system for something that might be more efficient. Also diving into Auth.js more since I really only know the basics and scratched the surface with this project.
+
+## Author
+
+- GitHub Profile - [Ryan McGuire](https://github.com/mackieva)
+- Frontend Mentor - [@mackieva](https://www.frontendmentor.io/profile/mackieva)
