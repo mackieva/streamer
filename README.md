@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://streamer-flame.vercel.app/sign-in](https://streamer-flame.vercel.app/sign-in)
+- Solution URL: [https://www.frontendmentor.io/solutions/full-stack-build-with-authenticationauthorization-wsGfG9siNE](https://www.frontendmentor.io/solutions/full-stack-build-with-authenticationauthorization-wsGfG9siNE)
+- Live Site URL: [https://streamer-flame.vercel.app](https://streamer-flame.vercel.app)
 
 ## My process
 
